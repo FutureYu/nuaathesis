@@ -31,7 +31,7 @@
 会导致多行的图表的最后一行无法居中，而 \pkg{geometry} 是设置页边距的必用宏包。
 所以个人推荐使用  \pkg{subfig}，效果可以参考\autoref{fig:sub2}。
 
-\begin{figure}[htb]
+\begin{figure}[!htb]
   \subfloat[左边的大校徽\label{fig:sub1}]{\includegraphics[width=4cm]{nuaa-logo.pdf}}\quad
   \subfloat[短标题：小校徽][小校徽，题注很长，不过请各位放心，它会自动换行\label{fig:sub2}]
   {\includegraphics[width=3cm]{nuaa-logo.pdf}}
@@ -94,7 +94,7 @@
 请自行加载。
 
 如果需要插入一个简易的表格，可以只使用 \env{tabular} 环境，如\autoref{tab:city}。
-\begin{table}[htb]
+\begin{table}[!htb]
   \caption[城市人口]{城市人口数量排名 (source: Wikipedia)\label{tab:city}}
   \begin{tabular}{lr}
     \toprule
@@ -109,7 +109,7 @@
 \end{table}
 
 也可以使用 \env{tabu} 环境，它可以更灵活地设置列宽，但它有一些 bug，如\autoref{tab:tabu}。
-\begin{table}[htb]
+\begin{table}[!htb]
   \caption{\env{tabu} 注意事项 \label{tab:tabu}}
   \begin{tabu} to .9\textwidth {XX[2]<{\strut}} \toprule
     默认列 & 有修正的列 \\ \midrule
@@ -127,7 +127,7 @@
 非常推荐看一下 \pkg{siunitx} 文档的，至少看一下“Hints for using siunitx”一节的输出结果，
 \autoref{tab:xmpl:mixed} 来自于该文档的 9.11 节 Creating a column with numbers and units。
 
-% \begin{table}[htb]
+% \begin{table}[!htb]
 %   \caption{Tables where numbers have different units}
 %   \label{tab:xmpl:mixed}
 %   \begin{tabular}

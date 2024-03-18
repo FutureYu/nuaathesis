@@ -87,6 +87,7 @@
 \DeclareBoolOption[false]{zhuanshuo}
 \DeclareBoolOption[false]{blindtrail}
 \DeclareBoolOption[false]{signname}
+\DeclareBoolOption[false]{signdate}
 \newif\ifnuaa@lang@cn \nuaa@lang@cnfalse
 \newif\ifnuaa@lang@en \nuaa@lang@enfalse
 \newif\ifnuaa@lang@ja \nuaa@lang@jafalse
@@ -847,9 +848,14 @@
   \newcommand{\secretize}[1]{#1}
 \fi
 \ifnuaa@signname
-  \newcommand{\sign}[1]{#1}
+  \newcommand{\signname}[1]{#1}
 \else
-  \newcommand{\sign}[1]{}
+  \newcommand{\signname}[1]{}
+\fi
+\ifnuaa@signdate
+  \newcommand{\signdate}[1]{#1}
+\else
+  \newcommand{\signdate}[1]{}
 \fi
 \newbox\nuaa@kw
 \newcommand{\nuaa@put@kw}[2]{%
@@ -1217,8 +1223,8 @@
   \vfill
   \begin{flushright}
   \linespread{1.0}\songti\fontsize{14bp}{25bp}\selectfont
-  \makebox[5\ccwd][c]{作者签名：} \underline{\makebox[9em]{\centering \sign{\includegraphics[scale=0.8]{fig/电子签名.jpg}}}} \par
-  \makebox[5\ccwd][c]{日 \hfill 期：} \underline{\makebox[9em]{\centering \sign{\nuaa@dateDig}}} \par
+  \makebox[5\ccwd][c]{作者签名：} \underline{\makebox[9em]{\centering \signname{\includegraphics[scale=0.8]{fig/电子签名.jpg}}}} \par
+  \makebox[5\ccwd][c]{日 \hfill 期：} \underline{\makebox[9em]{\centering \signdate{\nuaa@dateDig}}} \par
 
   \end{flushright}
   \vfill

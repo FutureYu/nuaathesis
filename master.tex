@@ -5,11 +5,14 @@
   % blindtrail, % 盲审打开
   % signname,   % 承诺书签字打开
   % signdate,   % 承诺书签日期打开
-  % blankleft
+  blankleft     % 空白页没页眉页脚
   openright,twoside % 章节在奇数页，页码靠外侧
 ]{nuaathesis}
-\setCJKmainfont[AutoFakeBold=true]{SimSun}
+
+% Windows下可以加入以下：字体设置为宋体
+\setCJKmainfont[AutoFakeBold=true]{SimSun} 
 \renewcommand\songti{\CJKfamily{\CJKrmdefault}}
+
 \raggedbottom
 \graphicspath{{./fig/},{./logo/},{../logo/}}
 

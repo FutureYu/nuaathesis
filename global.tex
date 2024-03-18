@@ -19,7 +19,7 @@
 
 % 设置基本文档信息，\linebreak 前面不要有空格，否则在无需换行的场合，中文之间的空格无法消除
 \nuaaset{
-  thesisid = {1028704 18-S000},   % 论文编号
+  thesisid = {\secretize{1028716} 24-S000},   % 论文编号
   title = {\nuaathesis{} 快速上手\linebreak 示例文档},
   author = {nuaatug},
   college = {\TeX{} 学院},
@@ -48,22 +48,7 @@
 }
 
 % 摘要
-\begin{abstract}
-本文介绍如何使用\nuaathesis{} 文档类撰写南京航空航天大学学位论文。
-
-首先介绍如何获取并编译本文档，然后展示论文部件的实例，最后列举部分常用宏包的使用方法。
-\end{abstract}
-\keywords{学位论文, 模板, \nuaathesis}
-
-\begin{abstractEn}
-This document introduces \nuaathesis, the \LaTeX{} document class for NUAA Thesis.
-
-First, we show how to get the source code and compile this document.
-Then we provide snippets for figures, tables, equations, etc.
-Finally we enforce some usage patterns.
-\end{abstractEn}
-\keywordsEn{NUAA thesis, document class, space is accepted here}
-
+\input{content/cp0.tex}
 
 % 请按自己的论文排版需求，随意修改以下全局设置
 
@@ -82,7 +67,12 @@ Finally we enforce some usage patterns.
 \usepackage{listings}
 \usepackage{multirow}
 \usepackage{pifont}
-\usepackage{collcell}
+\usepackage{fdsymbol}
+\usepackage[linesnumbered,ruled,boxed,algochapter,noline,longend]{algorithm2e}
+\usepackage{tabularx}
+\usepackage{gensymb}
+\usepackage{booktabs}
+\usepackage{enumitem,calc}
 
 \lstdefinestyle{lstStyleBase}{%
   basicstyle=\small\ttfamily,
@@ -124,9 +114,17 @@ Finally we enforce some usage patterns.
 \newcommand\pkg[1]{\texttt{#1}\textsuperscript{PKG}}
 \newcommand\env[1]{\texttt{#1}}
 
+\DeclareSubrefFormat{myparens}{#1(#2)}
+\captionsetup[subfloat]{subrefformat=myparens}
+
+\renewcommand{\algorithmcfname}{算法} 
+\SetKwInOut{Input}{输入}
+\SetKwInOut{Output}{输出}
+
 \theoremstyle{nuaaplain}
 \nuaatheoremchapu{definition}{定义}
 \nuaatheoremchapu{assumption}{假设}
 \nuaatheoremchap{exercise}{练习}
 \nuaatheoremchap{nonsense}{胡诌}
+\nuaatheoremchap{theorem}{定理}
 \nuaatheoremg[句]{lines}{句子}
